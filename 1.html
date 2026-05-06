@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Calculator 1</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;-webkit-tap-highlight-color:transparent;}
+body{background:#f5f7fa;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:15px;}
+.calc{width:100%;max:400px;background:#fff;border-radius:28px;padding:25px;box-shadow:0 8px 30px #00000015;}
+.screen{padding:20px;margin-bottom:20px;text-align:right;min-height:140px;}
+.up{font-size:18px;color:#888;margin-bottom:10px;word-break:break-all;}
+.down{font-size:42px;font-weight:600;color:#222;}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+button{border:none;border-radius:16px;height:65px;font-size:20px;font-weight:500;cursor:pointer;transition:.15s;}
+button:active{transform:scale(.96);}
+.gray{background:#eef1f6;color:#555;}
+.orange{background:#ff9f0a;color:#fff;}
+.blue{background:#3b82f6;color:#fff;}
+</style>
+</head>
+<body>
+<div class="calc">
+  <div class="screen">
+    <div class="up" id="exp"></div>
+    <div class="down" id="res">0</div>
+  </div>
+  <div class="grid">
+    <button class="gray">C</button>
+    <button class="gray">⌫</button>
+    <button class="gray">x²</button>
+    <button class="gray">x³</button>
+
+    <button class="gray">(</button>
+    <button class="gray">)</button>
+    <button class="gray">√</button>
+    <button class="orange">/</button>
+
+    <button>7</button><button>8</button><button>9</button>
+    <button class="orange">*</button>
+
+    <button>4</button><button>5</button><button>6</button>
+    <button class="orange">-</button>
+
+    <button>1</button><button>2</button><button>3</button>
+    <button class="orange">+</button>
+
+    <button>0</button><button>.</button><button>%</button>
+    <button class="blue">=</button>
+  </div>
+</div>
+<script>
+let exp='',res='';
+const e=document.getElementById('exp'),r=document.getElementById('res');
+document.querySelectorAll('button').forEach(b=>{
+b.onclick=()=>{
+let t=b.innerText;
+if(t==='C'){exp='';res='0';}
+else if(t==='⌫')exp=exp.slice(0,-1);
+else if(t==='x²')exp+='**2';
+else if(t==='x³')exp+='**3';
+else if(t==='√')exp+='Math.sqrt(';
+else if(t==='='){
+try{
+let s=exp.replace(/√/g,'Math.sqrt').replace(/%/g,'/100');
+res=eval(s).toFixed(6).replace(/\.?0*$/,'');
+}catch{res='Error';}
+}
+else exp+=t;
+e.innerText=exp;r.innerText=res;
+}})
+</script>
+</body>
+</html>
