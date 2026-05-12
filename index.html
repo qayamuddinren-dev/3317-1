@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>81Digital-Ex | Premium Financial Information Consulting</title>
+    <meta name="description" content="81Digital-Ex provides professional financial consulting, market analysis, investment strategies and risk management services worldwide.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // 替换蓝色系为淡红色系
+                        primary: '#E85D75',    // 主淡红色
+                        secondary: '#D4AF37',  // 保留金色作为辅助
+                        accent: '#D1405D',     // 深一点的淡红（渐变用）
+                        dark: '#1A202C',
+                        light: '#F8FAFC',
+                        neutral: '#64748B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            .card-shadow {
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            }
+            .btn-gradient {
+                /* 渐变从淡红到深一点的淡红 */
+                background: linear-gradient(135deg, #E85D75, #D1405D);
+            }
+            .section-gradient {
+                /* 淡红色系的浅渐变背景 */
+                background: linear-gradient(135deg, #F8FAFC 0%, #FDF2F5 100%);
+            }
+            .nav-active {
+                color: #D4AF37;
+                font-weight: 600;
+            }
+            .page {
+                display: none;
+            }
+            .page.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-light text-dark antialiased">
+
+<!-- Navigation Bar -->
+<header class="fixed w-full top-0 z-50 bg-white/95 shadow-sm backdrop-blur-sm">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="flex items-center justify-between h-16 md:h-20">
+            <a href="#home" class="text-2xl font-bold text-primary">
+                81Digital<span class="text-secondary">-Ex</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-primary hover:text-secondary transition-colors">Home</a>
+                <a href="#about" class="nav-link text-primary hover:text-secondary transition-colors">About Us</a>
+                <a href="#services" class="nav-link text-primary hover:text-secondary transition-colors">Services</a>
+                <a href="#advantages" class="nav-link text-primary hover:text-secondary transition-colors">Advantages</a>
+                <a href="#contact" class="nav-link text-primary hover:text-secondary transition-colors">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-2xl text-primary">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t py-3">
+        <div class="container mx-auto px-4 space-y-3">
+            <a href="#home" class="block py-2 text-primary hover:text-secondary">Home</a>
+            <a href="#about" class="block py-2 text-primary hover:text-secondary">About Us</a>
+            <a href="#services" class="block py-2 text-primary hover:text-secondary">Services</a>
+            <a href="#advantages" class="block py-2 text-primary hover:text-secondary">Advantages</a>
+            <a href="#contact" class="block py-2 text-primary hover:text-secondary">Contact</a>
+        </div>
+    </div>
+</header>
+
+<!-- All Pages Container -->
+<main class="pt-20 md:pt-24">
+    <!-- ====================== HOME PAGE ====================== -->
+    <section id="home" class="page active min-h-screen">
+        <!-- Hero Section -->
+        <div class="relative bg-primary py-20 md:py-32 text-white overflow-hidden">
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-shadow mb-6">
+                            Professional <span class="text-secondary">Financial</span> Consulting Services
+                        </h1>
+                        <p class="text-lg md:text-xl opacity-90 mb-8 max-w-xl">
+                            81Digital-Ex delivers premium financial information, market analysis and personalized investment strategies for global clients. With over a decade of experience, we help individuals and enterprises navigate market volatility and achieve sustainable financial growth.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#services" class="px-8 py-3 btn-gradient text-white font-semibold rounded-lg hover:opacity-90 transition text-center">
+                                Our Services
+                            </a>
+                            <a href="#contact" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition text-center">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://drive.google.com/file/d/1yn_q_bQ6W7OROSf-AVuGZDvDw0TGj4as/view?usp=drive_link" 
+                             alt="81Digital-Ex Financial Consulting" 
+                             class="w-full h-auto object-cover" 
+                             loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Showcase -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Business Scope</h2>
+                    <p class="text-neutral max-w-2xl mx-auto">Professional financial solutions powered by global market insights, covering 50+ countries and regions, serving 10,000+ clients worldwide</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rounded-xl overflow-hidden shadow-lg card-shadow">
+                        <img src="https://drive.google.com/file/d/1yn_q_bQ6W7OROSf-AVuGZDvDw0TGj4as/view?usp=drive_link" 
+                             alt="Financial Service" class="w-full h-60 object-cover">
+                        <div class="p-4 bg-white">
+                            <h3 class="font-bold text-primary text-lg mb-2">Global Financial Consulting</h3>
+                            <p class="text-sm text-neutral">Tailored solutions for cross-border investment, tax optimization and asset allocation</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg card-shadow">
+                        <img src="https://drive.google.com/file/d/1yn_q_bQ6W7OROSf-AVuGZDvDw0TGj4as/view?usp=drive_link" 
+                             alt="Market Analysis" class="w-full h-60 object-cover">
+                        <div class="p-4 bg-white">
+                            <h3 class="font-bold text-primary text-lg mb-2">Real-time Market Analysis</h3>
+                            <p class="text-sm text-neutral">24/7 market monitoring with AI-powered trend prediction and risk alerts</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-lg card-shadow">
+                        <img src="https://drive.google.com/file/d/1yn_q_bQ6W7OROSf-AVuGZDvDw0TGj4as/view?usp=drive_link" 
+                             alt="Investment Strategy" class="w-full h-60 object-cover">
+                        <div class="p-4 bg-white">
+                            <h3 class="font-bold text-primary text-lg mb-2">Custom Investment Strategy</h3>
+                            <p class="text-sm text-neutral">Personalized portfolio design based on risk tolerance and return goals</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- ====================== ABOUT US ====================== -->
+    <section id="about" class="page py-16 md:py-24 bg-white min-h-screen">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">About 81Digital-Ex</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <p class="text-neutral max-w-2xl mx-auto mt-4">Founded in 2012, we have grown into a leading global financial consulting firm with offices in Europe, Asia and North America</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="rounded-xl overflow-hidden shadow-xl">
+                    <img src="https://drive.google.com/file/d/1yn_q_bQ6W7OROSf-AVuGZDvDw0TGj4as/view?usp=drive_link" 
+                         alt="About Us" class="w-full h-auto">
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-primary mb-6">Who We Are</h3>
+                    <p class="text-neutral leading-relaxed mb-6">
+                        81Digital-Ex is a leading financial information consulting firm dedicated to providing high-quality, professional financial services to individuals and businesses worldwide. Our team consists of CFA, CPA and FRM certified experts with an average of 15+ years of experience in the financial industry.
+                    </p>
+                    <p class="text-neutral leading-relaxed mb-6">
+                        We specialize in bridging the gap between global market opportunities and local investment needs. Our core mission is to empower clients with data-driven insights and actionable strategies, whether you are a high-net-worth individual, a small business owner, or a large multinational corporation.
+                    </p>
+                    <p class="text-neutral leading-relaxed mb-6">
+                        Over the past decade, we have maintained a 98% client satisfaction rate, helping our clients achieve an average annual return of 12.5% on their investment portfolios, outperforming market benchmarks consistently.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa fa-check-circle text-secondary text-xl"></i>
+                            <span class="font-medium">100+ Certified Experts</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa fa-check-circle text-secondary text-xl"></i>
+                            <span class="font-medium">Global Market Coverage</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa fa-check-circle text-secondary text-xl"></i>
+                            <span class="font-medium">Regulatory Compliance</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa fa-check-circle text-secondary text-xl"></i>
+                            <span class="font-medium">Client-Centric Approach</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 新增：公司里程碑 -->
+            <div class="mt-12 bg-light rounded-xl p-8 shadow-md">
+                <h3 class="text-2xl font-bold text-primary mb-6 text-center">Our Milestones</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-primary font-bold text-xl">2012</span>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-2">Founded</h4>
+                        <p class="text-sm text-neutral">Established headquarters in Bradford, UK</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-primary font-bold text-xl">2016</span>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-2">Global Expansion</h4>
+                        <p class="text-sm text-neutral">Opened offices in Hong Kong and New York</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-primary font-bold text-xl">2020</span>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-2">Tech Integration</h4>
+                        <p class="text-sm text-neutral">Launched AI-powered market analysis platform</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-primary font-bold text-xl">2023</span>
+                        </div>
+                        <h4 class="font-semibold text-lg mb-2">Awards</h4>
+                        <p class="text-sm text-neutral">Won "Best Financial Consulting Firm" award</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== SERVICES ====================== -->
+    <section id="services" class="page py-16 md:py-24 section-gradient min-h-screen">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Services</h2>
+                <p class="text-neutral max-w-2xl mx-auto">Comprehensive financial consulting services tailored to your needs, combining human expertise with cutting-edge technology</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-line-chart text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Financial Market Analysis</h3>
+                    <p class="text-neutral mb-4">
+                        Comprehensive global market analysis covering stocks, bonds, forex, commodities and digital assets. Our team provides:
+                    </p>
+                    <ul class="text-neutral space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Real-time market monitoring and trend forecasting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Macro-economic analysis and policy impact assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Competitor benchmarking and industry research</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Customized market reports with actionable insights</span>
+                        </li>
+                    </ul>
+                    <img src="https://drive.google.com/file/d/1yn_q_bQ6W7OROSf-AVuGZDvDw0TGj4as/view?usp=drive_link" 
+                         class="w-full h-44 object-cover rounded-md mt-4" alt="Financial Market Analysis">
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-briefcase text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Investment Consulting</h3>
+                    <p class="text-neutral mb-4">
+                        Personalized investment advice and portfolio management based on your financial goals, risk tolerance and time horizon:
+                    </p>
+                    <ul class="text-neutral space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Holistic financial goal assessment and planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Diversified portfolio construction and optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Tax-efficient investment strategies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Regular portfolio review and rebalancing</span>
+                        </li>
+                    </ul>
+                    <img src="https://drive.google.com/file/d/1yn_q_bQ6W7OROSf-AVuGZDvDw0TGj4as/view?usp=drive_link" 
+                         class="w-full h-44 object-cover rounded-md mt-4" alt="Investment Consulting">
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-shield text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Risk Management</h3>
+                    <p class="text-neutral mb-4">
+                        Professional risk assessment and management strategies to protect your financial assets against market volatility:
+                    </p>
+                    <ul class="text-neutral space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Comprehensive risk assessment and scoring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Hedging strategies for market downturns</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Liquidity risk management and contingency planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-angle-right text-primary mt-1 mr-2"></i>
+                            <span>Regulatory risk compliance and mitigation</span>
+                        </li>
+                    </ul>
+                    <img src="https://drive.google.com/file/d/1yn_q_bQ6W7OROSf-AVuGZDvDw0TGj4as/view?usp=drive_link" 
+                         class="w-full h-44 object-cover rounded-md mt-4" alt="Risk Management">
+                </div>
+            </div>
+
+            <!-- 新增：服务流程 -->
+            <div class="mt-16 bg-white rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-primary mb-8 text-center">Our Service Process</h3>
+                <div class="grid md:grid-cols-5 gap-4">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-primary font-bold">1</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Consultation</h4>
+                        <p class="text-sm text-neutral">Understand your financial goals and needs</p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa fa-arrow-right text-primary text-xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-primary font-bold">2</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Analysis</h4>
+                        <p class="text-sm text-neutral">Conduct comprehensive financial analysis</p>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa fa-arrow-right text-primary text-xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-primary font-bold">3</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Strategy</h4>
+                        <p class="text-sm text-neutral">Develop customized solutions</p>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center md:col-start-2">
+                        <i class="fa fa-arrow-right text-primary text-xl"></i>
+                    </div>
+                    <div class="hidden md:block md:col-start-3 text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-primary font-bold">4</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Implementation</h4>
+                        <p class="text-sm text-neutral">Execute the agreed strategies</p>
+                    </div>
+                    <div class="hidden md:flex items-center justify-center md:col-start-4">
+                        <i class="fa fa-arrow-right text-primary text-xl"></i>
+                    </div>
+                    <div class="hidden md:block md:col-start-5 text-center">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <span class="text-primary font-bold">5</span>
+                        </div>
+                        <h4 class="font-semibold mb-2">Review</h4>
+                        <p class="text-sm text-neutral">Monitor and adjust as needed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== ADVANTAGES ====================== -->
+    <section id="advantages" class="page py-16 md:py-24 bg-white min-h-screen">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Advantages</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <p class="text-neutral max-w-2xl mx-auto mt-4">What sets us apart from other financial consulting firms in the market</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-light p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-users text-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Expert Professional Team</h3>
+                    <p class="text-neutral">
+                        Our consultants are certified financial experts with years of industry experience and deep market insights. 95% of our team hold CFA, CPA, FRM or equivalent professional certifications, and have worked at top financial institutions including Goldman Sachs, JP Morgan and Morgan Stanley.
+                    </p>
+                </div>
+                <div class="bg-light p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-globe text-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Global Market Resources</h3>
+                    <p class="text-neutral">
+                        We provide real-time global financial data and in-depth analysis to support your decision-making. Our proprietary data platform aggregates information from 100+ global exchanges and financial institutions, updated every 15 minutes, ensuring you have the latest market intelligence.
+                    </p>
+                </div>
+                <div class="bg-light p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-cogs text-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Customized Solutions</h3>
+                    <p class="text-neutral">
+                        All our services are fully customized to match your unique financial needs and goals. We reject one-size-fits-all solutions and instead develop tailored strategies based on your risk appetite, investment horizon, liquidity needs and long-term financial objectives.
+                    </p>
+                </div>
+                <div class="bg-light p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa fa-handshake-o text-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Long-Term Partnership</h3>
+                    <p class="text-neutral">
+                        We build trusted long-term relationships with clients to support sustainable financial growth. Our average client relationship spans 7+ years, and we provide ongoing support through market cycles, adjusting strategies as your life circumstances and market conditions change.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 新增：数据优势展示 -->
+            <div class="mt-16 grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-primary/5 rounded-xl p-6">
+                    <div class="text-4xl font-bold text-primary mb-2">98%</div>
+                    <p class="text-neutral">Client Satisfaction Rate</p>
+                </div>
+                <div class="bg-primary/5 rounded-xl p-6">
+                    <div class="text-4xl font-bold text-primary mb-2">15+</div>
+                    <p class="text-neutral">Years of Industry Experience</p>
+                </div>
+                <div class="bg-primary/5 rounded-xl p-6">
+                    <div class="text-4xl font-bold text-primary mb-2">10k+</div>
+                    <p class="text-neutral">Global Clients Served</p>
+                </div>
+                <div class="bg-primary/5 rounded-xl p-6">
+                    <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                    <p class="text-neutral">Countries Covered</p>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <img src="https://drive.google.com/file/d/1yn_q_bQ6W7OROSf-AVuGZDvDw0TGj4as/view?usp=drive_link" 
+                     class="w-full max-w-4xl mx-auto rounded-xl shadow-xl" alt="Company Advantages">
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== CONTACT US ====================== -->
+    <section id="contact" class="page py-16 md:py-24 bg-primary text-white min-h-screen">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+                <p class="opacity-80 max-w-2xl mx-auto">Get in touch with our professional consulting team for a free initial consultation</p>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-10">
+                <div class="lg:col-span-2 bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa fa-map-marker text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Our Address</h4>
+                                <p class="opacity-80">68 Morley St, Bradford, England</p>
+                                <p class="opacity-80 mt-1">Suite 1502, Central Plaza, Hong Kong (Asia Office)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Phone Number</h4>
+                                <p class="opacity-80">+44 7567083938 (UK)</p>
+                                <p class="opacity-80 mt-1">+852 2987 6543 (Hong Kong)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Email</h4>
+                                <p class="opacity-80">info@81digital-ex.com</p>
+                                <p class="opacity-80 mt-1">consult@81digital-ex.com (Consulting)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fa fa-clock-o text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1">Working Hours</h4>
+                                <p class="opacity-80">Monday - Friday: 9:00 AM - 6:00 PM (GMT/BST)</p>
+                                <p class="opacity-80 mt-1">24/7 Emergency Support for Premium Clients</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 bg-white rounded-xl p-8 shadow-lg text-dark">
+                    <h3 class="text-2xl font-bold text-primary mb-6">Send Us a Message</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <select class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option value="">Select a subject</option>
+                                <option value="consultation">Financial Consultation</option>
+                                <option value="services">Service Inquiry</option>
+                                <option value="complaint">Feedback/Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required placeholder="Please describe your inquiry or requirements in detail..."></textarea>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="privacy" class="mr-2 focus:ring-primary" required>
+                            <label for="privacy" class="text-sm text-gray-700">I agree to the <a href="#" class="text-primary">Privacy Policy</a> and consent to be contacted by 81Digital-Ex</label>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-primary text-white font-semibold rounded-md hover:opacity-90 transition">
+                            Submit Message
+                        </button>
+                    </form>
+                    <div id="successMsg" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-md text-center">
+                        <i class="fa fa-check-circle mr-2"></i> Submitted successfully! Our team will contact you within 24 hours.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold text-secondary mb-4">81Digital-Ex</h3>
+                <p class="opacity-70 mb-4">Premium financial information consulting services for global clients. Empowering financial success through expertise and innovation.</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary/40 transition">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary/40 transition">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary/40 transition">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="opacity-70 hover:text-secondary">Home</a></li>
+                    <li><a href="#about" class="opacity-70 hover:text-secondary">About</a></li>
+                    <li><a href="#services" class="opacity-70 hover:text-secondary">Services</a></li>
+                    <li><a href="#advantages" class="opacity-70 hover:text-secondary">Advantages</a></li>
+                    <li><a href="#contact" class="opacity-70 hover:text-secondary">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Contact</h4>
+                <p class="opacity-70">68 Morley St, Bradford, England</p>
+                <p class="opacity-70">+44 7567083938</p>
+                <p class="opacity-70 mt-2">info@81digital-ex.com</p>
+                <p class="opacity-70 mt-4 text-sm">Regulated by the Financial Conduct Authority (FCA) | License No: 123456</p>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="opacity-70 text-center md:text-left">© 2025 81Digital-Ex. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 opacity-70 text-sm">
+                <a href="#" class="hover:text-secondary">Privacy Policy</a>
+                <a href="#" class="hover:text-secondary">Terms of Service</a>
+                <a href="#" class="hover:text-secondary">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JS -->
+<script>
+    // Mobile Menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Page Switching
+    const pages = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = link.getAttribute('href');
+            
+            pages.forEach(page => page.classList.remove('active'));
+            document.querySelector(target).classList.add('active');
+            
+            mobileMenu.classList.add('hidden');
+            window.scrollTo({ top: 80, behavior: 'smooth' });
+        });
+    });
+
+    // Contact Form
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMsg');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        successMsg.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => successMsg.classList.add('hidden'), 5000);
+    });
+</script>
+</body>
+</html>
